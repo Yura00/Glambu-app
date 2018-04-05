@@ -1242,6 +1242,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.glambu.dev.com;
 				PRODUCT_NAME = Glambu;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1259,6 +1260,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.glambu.dev.com;
 				PRODUCT_NAME = Glambu;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
