@@ -10,6 +10,7 @@
     "prop-types": "^15.6.1",
     "react": "^16.3.0-alpha.1",
     "react-native": "0.54.4",
+    "react-native-facebook-login": "^1.6.1",
     "react-native-material-ui": "^1.22.1",
     "react-native-vector-icons": "^4.6.0",
     "react-navigation": "^1.5.10",
