@@ -25,8 +25,8 @@ export default StyleSheet.create({
     resizeMode: 'contain'
   },
   mainContent: {
-    flex: 1.3,
-    padding: 30
+    flex: 1,
+    alignItems: 'center',
   },
   title: {
     textAlign: 'center',
@@ -35,7 +35,9 @@ export default StyleSheet.create({
   },
   container: {
     flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
+    marginVertical: 50,
   },
   touchIdContainer: {
     flex: 0.5,
