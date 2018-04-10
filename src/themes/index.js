@@ -1,5 +1,4 @@
-import Colors from './colors'
-// import Images from './images'
-import GlobalStyle from './globalStyle'
-
-export { Colors, GlobalStyle }
+export { default as Colors } from './colors'
+export { default as Images } from './images'
+export { default as Fonts } from './fonts'
+export { default as GlobalStyle } from './globalStyle'
