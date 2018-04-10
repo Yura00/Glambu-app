@@ -2,18 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addNavigationHelpers, StackNavigator } from 'react-navigation';
-import { Login } from '../pages';
+import { Onboarding } from '../pages';
 import { addListener } from '../utils/redux';
 
 export const AppNavigator = StackNavigator(
   {
-    Login: {
-      screen: Login
+    Onboarding: {
+      screen: Onboarding
     }
   },
   {
     // initialRouteName: 'RootDrawerNavigator',//test
-    initialRouteName: 'Login',
+    initialRouteName: 'Onboarding',
     navigationOptions: {
       gesturesEnabled: false,
       header: null,
