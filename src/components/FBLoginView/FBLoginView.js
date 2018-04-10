@@ -5,6 +5,6 @@ import styles from './FBLoginView.style'
 
 export default () => (
   <View style={styles.container}>
-    <Text style={styles.btnText}>SIGN IN WITH FACEBOOK</Text>
+    <Text style={styles.btnText}>Login with Facebook</Text>
   </View>
 )

@@ -1,12 +1,14 @@
 import { StyleSheet } from 'react-native'
+import { Colors, Fonts } from '@theme'
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: '#4267b2',
-    padding: 20,
-    borderRadius: 5,
+    backgroundColor: Colors.white,
+    paddingVertical: 15,
+    alignSelf: 'stretch',
   },
   btnText: {
-    color: '#ffffff'
+    color: Colors.secondary,
+    fontSize: Fonts.size.h4
   }
 })
