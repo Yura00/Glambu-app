@@ -1,14 +1,22 @@
 import React from 'react'
-import { View, StatusBar, Image, Text } from 'react-native'
+import { View, StatusBar, Image, Text, Dimensions } from 'react-native'
 import { connect } from 'react-redux'
+import Slick from 'react-native-slick';
 import { setUserToken } from '../../actions/auth'
 import {FBLogin, FBLoginManager} from 'react-native-facebook-login';
 
 import FBLoginView from '../../components/FBLoginView';
 
-import { GlobalStyle, Colors } from '../../themes'
-import { BG_GRAD_ONBOARDING } from '../../themes/images'
+import { GlobalStyle, Colors, Images } from '@theme'
+
+import Slide1 from './slide1'
+import Slide2 from './slide2'
+import Slide3 from './slide3'
+import Slide4 from './slide4'
+import Slide5 from './slide5'
 import styles from './onboarding.style'
+
+const { width, height } = Dimensions.get('window');
 
 class Onboarding extends React.Component {
   constructor(props) {
@@ -34,12 +42,27 @@ class Onboarding extends React.Component {
       <View style={GlobalStyle.fullPageContainer}>
         <StatusBar backgroundColor="#4000002f" translucent />
         <Image
-          source={BG_GRAD_ONBOARDING}
+          source={Images.BG_GRAD_ONBOARDING}
           style={styles.topBackground}
-          resizeMode="cover"
+          resizeMode="stretch"
         />
-        <View style={GlobalStyle.pageContainer}>
-          <Text style={styles.title}>Offer money for a date</Text>
+        <View style={GlobalStyle.pageContainer}> 
+          <Slick
+            height={height * 0.75}
+            index={0}
+            loop={false}
+            dot={<View style={{backgroundColor: 'rgba(255,255,255,.5)', width: 6, height: 6, borderRadius: 3, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3}} />}
+            activeDot={<View style={{backgroundColor: '#ffffff', width: 6, height: 6, borderRadius: 3, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3}} />}
+            paginationStyle={{
+              bottom: 50
+            }}>
+            <Slide1 />
+            <Slide2 />
+            <Slide3 />
+            <Slide4 />
+            <Slide5 />
+          </Slick>
+          <Text style={styles.desc}>We do not post in your name. We only use Facebook to login. 100% privacy guaranteed.</Text>
           <View style={styles.signinBtn}>
             <FBLogin
               buttonView={<FBLoginView />}
