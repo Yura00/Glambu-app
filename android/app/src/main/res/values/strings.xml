@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Glambu</string>
+    <string name="fb_app_id">227061978039385</string>
+    <string name="fb_login_protocol_scheme">fb227061978039385</string>
 </resources>
