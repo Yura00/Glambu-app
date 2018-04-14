@@ -34,6 +34,10 @@ export default StyleSheet.create({
     height: height * 0.65,
     width: width
   },
+  slide2Img: {
+    height: height * 0.6,
+    width: width
+  },
   desc: {
     color: '#ffffff80',
     fontSize: Fonts.size.h6,

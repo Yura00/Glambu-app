@@ -1,5 +1,6 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, Image } from 'react-native'
+import { Images } from '@theme'
 
 import styles from './onboarding.style'
 
@@ -7,6 +8,11 @@ export default function () {
   return (
     <View style={styles.slide}>
       <Text style={styles.title}>Choose who you{"\n"}would like to meet</Text>
+      <Image
+        source={Images.IMG_ONBOARDING_SLIDE2}
+        resizeMode="stretch"
+        style={styles.slide2Img}
+      />
     </View>
   )
 }

@@ -54,7 +54,7 @@ class Onboarding extends React.Component {
             dot={<View style={{backgroundColor: 'rgba(255,255,255,.5)', width: 6, height: 6, borderRadius: 3, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3}} />}
             activeDot={<View style={{backgroundColor: '#ffffff', width: 6, height: 6, borderRadius: 3, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3}} />}
             paginationStyle={{
-              bottom: 50
+              bottom: 20
             }}>
             <Slide1 />
             <Slide2 />
