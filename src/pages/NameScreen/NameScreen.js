@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Text, TextInput } from 'react-native';
-import { TextField } from 'react-native-material-textfield';
 
 import { GlobalStyle, Colors } from '@theme';
 import BottomButton from '../../components/BottomButton';
