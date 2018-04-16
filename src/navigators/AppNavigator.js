@@ -4,16 +4,20 @@ import { connect } from 'react-redux';
 import { addNavigationHelpers, StackNavigator } from 'react-navigation';
 import { Onboarding } from '../pages';
 import { addListener } from '../utils/redux';
+import SignUpNavigator from './SignUpNavigator';
 
 export const AppNavigator = StackNavigator(
   {
     Onboarding: {
       screen: Onboarding
+    },
+    RegisterationFlow: {
+      screen: SignUpNavigator
     }
   },
   {
     // initialRouteName: 'RootDrawerNavigator',//test
-    initialRouteName: 'Onboarding',
+    initialRouteName: 'RegisterationFlow',
     navigationOptions: {
       gesturesEnabled: false,
       header: null,

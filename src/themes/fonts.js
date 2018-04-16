@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native'
 import Colors from './colors'
 
 const size = {
-  h1: 32,
+  h1: 40,
   h2: 24,
   h3: 18,
   h4: 20,
