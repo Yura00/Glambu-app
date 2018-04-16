@@ -9,6 +9,12 @@ const Colors = {
     disturb: '#ff0000',
     offline: '#b3b3b3',
 
+    bkColor: '#fafafa',
+    btnInactive: '#0000001f',
+    btnActive: '#d24857',
+    commentText: '#00000061',
+
+    black: '#000000',
     red: '#ff0000',
     darkred: '#ff411b',
     orange: '#ffae00',
