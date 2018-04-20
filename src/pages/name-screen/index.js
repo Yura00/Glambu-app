@@ -1,1 +1,1 @@
-export { default } from './NameScreen'
+export { default } from "./NameScreen";

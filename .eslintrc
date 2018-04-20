@@ -1,0 +1,36 @@
+{
+  "extends": ["prettier",  "plugin:react/recommended", "plugin:jsx-a11y/recommended", "eslint:recommended"],
+  "plugins": ["jsx-a11y", "prettier", "react"],
+  "env": {
+    "browser": false,
+    "es6": true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "strict": 0,
+    "prettier/prettier": "error",
+    "react/prop-types": [1],
+    "no-debugger": 1,
+    "jsx-a11y/no-static-element-interactions": 0,
+    "jsx-a11y/no-noninteractive-element-interactions": 0,
+    "jsx-a11y/click-events-have-key-events" : 0
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "globals": {
+    "window" : true,
+    "console" : true,
+    "localStorage" : true,
+    "auth0" : true,
+    "graphql": true,
+    "require" : true,
+    "module": true,
+    "process" : true,
+    "analytics" : true
+  }
+}
