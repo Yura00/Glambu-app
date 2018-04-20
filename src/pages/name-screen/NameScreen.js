@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, Text, TextInput } from 'react-native';
+import { View, Text, TextInput, Image } from 'react-native';
 
-import { GlobalStyle, Colors } from '@theme';
+import { GlobalStyle, Colors, Images } from '@theme';
 import BottomButton from '../../components/BottomButton';
 import styles from './NameScreen.style';
 
@@ -29,7 +29,8 @@ class NameScreen extends React.Component {
               onChangeText={ (name) => this.setState({ name }) }
             />
           </View>
-          <View>
+          <View style={GlobalStyle.wrapper}>
+            <Image source={Images.IC_COMMENTS} />
             <Text style={styles.commentText}>
               Did you know that gentlemen have extremely high extremely high privacy at Glambu? It's only a girl you sent a date offer to can view your profile!
             </Text>

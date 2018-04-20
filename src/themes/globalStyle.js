@@ -17,11 +17,13 @@ export default StyleSheet.create({
   pageContainer: {
     flex: 1,
     paddingHorizontal: 20,
-    paddingVertical: 50
+    paddingVertical: 40
   },
   container: {
     flex: 1,
-
     justifyContent: 'center'
+  },
+  wrapper: {
+    flexDirection: 'row',
   }
 });
