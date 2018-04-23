@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, TextInput, Image } from "react-native";
+import { NavigationActions } from "react-navigation";
 
 import { GlobalStyle, Colors, Images } from "@theme";
 import BottomButton from "../../components/BottomButton";
@@ -12,6 +13,12 @@ class NameScreen extends React.Component {
       name: "",
     };
   }
+  onNext = () => {
+    const navigateAction = NavigationActions.navigate({
+      routeName: "UploadImages",
+    });
+    this.props.navigation.dispatch(navigateAction);
+  };
   render() {
     const { name } = this.state;
     return (
@@ -36,7 +43,11 @@ class NameScreen extends React.Component {
             </Text>
           </View>
         </View>
-        <BottomButton name="Next" active={name.length != 0} />
+        <BottomButton
+          name="Next"
+          active={name.length != 0}
+          onPress={this.onNext}
+        />
       </View>
     );
   }

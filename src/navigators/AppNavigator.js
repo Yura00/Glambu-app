@@ -1,28 +1,28 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { addNavigationHelpers, StackNavigator } from 'react-navigation';
-import { Onboarding } from '../pages';
-import { addListener } from '../utils/redux';
-import SignUpNavigator from './SignUpNavigator';
+import React from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { addNavigationHelpers, StackNavigator } from "react-navigation";
+import { Onboarding } from "../pages";
+import { addListener } from "../utils/redux";
+import SignUpNavigator from "./SignUpNavigator";
 
 export const AppNavigator = StackNavigator(
   {
     Onboarding: {
-      screen: Onboarding
+      screen: Onboarding,
     },
     RegisterationFlow: {
-      screen: SignUpNavigator
-    }
+      screen: SignUpNavigator,
+    },
   },
   {
     // initialRouteName: 'RootDrawerNavigator',//test
-    initialRouteName: 'RegisterationFlow',
+    initialRouteName: "RegisterationFlow",
     navigationOptions: {
       gesturesEnabled: false,
       header: null,
-    }
-  }
+    },
+  },
 );
 
 class AppWithNavigationState extends React.Component {

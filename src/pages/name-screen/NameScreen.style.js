@@ -1,16 +1,13 @@
 import { StyleSheet } from "react-native";
-import { Colors, Fonts } from "@theme";
+import { Fonts } from "@theme";
 
 export default StyleSheet.create({
   title: {
-    fontSize: Fonts.size.h1,
-    color: Colors.black,
-    textAlign: "left",
+    ...Fonts.style.topic,
     paddingBottom: 30,
   },
   commentText: {
-    color: Colors.commentText,
-    fontSize: Fonts.size.h6,
+    ...Fonts.style.comments,
     paddingLeft: 10,
     flex: 1,
   },
