@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
+import { NavigationActions } from "react-navigation";
 import BottomButton from "../../components/BottomButton";
 import GridView from "react-native-super-grid";
 import Icon from "react-native-vector-icons/SimpleLineIcons";
@@ -7,15 +8,20 @@ import { GlobalStyle, Images } from "@theme";
 import styles from "./UploadImages.style";
 
 class UploadImages extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "",
+    };
+  }
+  onNext = () => {
+    const navigateAction = NavigationActions.navigate({
+      routeName: "BioScreen",
+    });
+    this.props.navigation.dispatch(navigateAction);
+  };
   render() {
-    const items = [
-      { name: "TURQUOISE", code: "#1abc9c" },
-      { name: "EMERALD", code: "#2ecc71" },
-      { name: "PETER RIVER", code: "#3498db" },
-      { name: "AMETHYST", code: "#9b59b6" },
-      { name: "WET ASPHALT", code: "#34495e" },
-      { name: "GREEN SEA", code: "#16a085" },
-    ];
+    const items = [0, 1, 2, 3, 4, 5];
     return (
       <View style={GlobalStyle.fullPageContainer}>
         <View style={GlobalStyle.pageContainer}>
@@ -30,7 +36,7 @@ class UploadImages extends React.Component {
               items={items}
               style={styles.gridView}
               renderItem={item => (
-                <View style={styles.itemContainer}>
+                <View style={styles.itemContainer} key={item}>
                   <TouchableOpacity style={styles.action}>
                     <Icon name="plus" size={20} color="#fff" />
                   </TouchableOpacity>
@@ -46,7 +52,7 @@ class UploadImages extends React.Component {
             </Text>
           </View>
         </View>
-        <BottomButton name="Next" onPress={this.onNext} />
+        <BottomButton name="Go to final step" active onPress={this.onNext} />
       </View>
     );
   }
