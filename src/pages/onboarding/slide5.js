@@ -1,10 +1,10 @@
-import React from 'react'
-import { View, Text, Image } from 'react-native'
-import { Images } from '@theme'
+import React from "react";
+import { View, Text, Image } from "react-native";
+import { Images } from "@theme";
 
-import styles from './onboarding.style'
+import styles from "./onboarding.style";
 
-export default function () {
+export default function() {
   return (
     <View style={styles.slide}>
       <Text style={styles.title}>Meet real gentle men</Text>
@@ -14,5 +14,5 @@ export default function () {
         style={styles.slide1Img}
       />
     </View>
-  )
+  );
 }

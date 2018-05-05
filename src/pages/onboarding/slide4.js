@@ -1,10 +1,10 @@
-import React from 'react'
-import { View, Text, Image } from 'react-native'
-import { Images } from '@theme'
+import React from "react";
+import { View, Text, Image } from "react-native";
+import { Images } from "@theme";
 
-import styles from './onboarding.style'
+import styles from "./onboarding.style";
 
-export default function () {
+export default function() {
   return (
     <View style={styles.slide}>
       <Text style={styles.title}>Date your dream girl</Text>
@@ -14,5 +14,5 @@ export default function () {
         style={styles.slide2Img}
       />
     </View>
-  )
+  );
 }

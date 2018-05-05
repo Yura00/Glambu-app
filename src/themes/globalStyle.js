@@ -7,8 +7,8 @@ export default StyleSheet.create({
     fontSize: 18,
     fontWeight: "600",
     color: Colors.bkColor,
-    textAlign: "center", // center header title for Android
-    alignSelf: "center", // center header title for Android,
+    textAlign: "center",
+    alignSelf: "center",
   },
   fullPageContainer: {
     flex: 1,

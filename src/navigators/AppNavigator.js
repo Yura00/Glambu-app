@@ -5,22 +5,27 @@ import { addNavigationHelpers, StackNavigator } from "react-navigation";
 import { Onboarding } from "../pages";
 import { addListener } from "../utils/redux";
 import SignUpNavigator from "./SignUpNavigator";
+import MainTabNavigator from "./MainTabNavigator";
 
 export const AppNavigator = StackNavigator(
   {
     Onboarding: {
       screen: Onboarding,
+      navigationOptions: {
+        header: null,
+      },
     },
     RegisterationFlow: {
       screen: SignUpNavigator,
     },
+    MainTab: {
+      screen: MainTabNavigator,
+    },
   },
   {
-    // initialRouteName: 'RootDrawerNavigator',//test
-    initialRouteName: "RegisterationFlow",
+    initialRouteName: "MainTab",
     navigationOptions: {
       gesturesEnabled: false,
-      header: null,
     },
   },
 );

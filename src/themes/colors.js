@@ -1,7 +1,7 @@
 const Colors = {
   default: "#0f5fad",
   secondary: "#d24857",
-  navy: "#2d3e50",
+  navy: "#2b2f3b",
   turquoise: "#16a086",
 
   online: "#25c700",

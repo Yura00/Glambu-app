@@ -1,10 +1,10 @@
-import React from 'react'
-import { View, Text, Image } from 'react-native'
-import { Images } from '@theme'
+import React from "react";
+import { View, Text, Image } from "react-native";
+import { Images } from "@theme";
 
-import styles from './onboarding.style'
+import styles from "./onboarding.style";
 
-export default function () {
+const Slide2 = () => {
   return (
     <View style={styles.slide}>
       <Text style={styles.title}>Choose who you{"\n"}would like to meet</Text>
@@ -14,5 +14,6 @@ export default function () {
         style={styles.slide2Img}
       />
     </View>
-  )
-}
+  );
+};
+export default Slide2;

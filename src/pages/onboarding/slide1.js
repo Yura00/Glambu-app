@@ -1,11 +1,10 @@
-import React from 'react'
-import { View, Text, Image } from 'react-native'
-import { Grid, Col, Row } from 'react-native-easy-grid'
-import { Images } from '@theme'
+import React from "react";
+import { View, Text, Image } from "react-native";
+import { Images } from "@theme";
 
-import styles from './onboarding.style'
+import styles from "./onboarding.style";
 
-export default function () {
+const Slide1 = () => {
   return (
     <View style={styles.slide}>
       <Text style={styles.title}>Find girls close to you</Text>
@@ -15,5 +14,6 @@ export default function () {
         style={styles.slide1Img}
       />
     </View>
-  )
-}
+  );
+};
+export default Slide1;

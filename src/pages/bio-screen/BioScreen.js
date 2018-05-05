@@ -16,7 +16,7 @@ class BioScreen extends React.Component {
   }
   onNext = () => {
     const navigateAction = NavigationActions.navigate({
-      routeName: "BioScreen",
+      routeName: "MainTab",
     });
     this.props.navigation.dispatch(navigateAction);
   };
