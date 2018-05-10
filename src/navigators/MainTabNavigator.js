@@ -1,16 +1,32 @@
 import React from "react";
-import { TabNavigator } from "react-navigation";
-import { HomeScreen } from "../pages";
+import { TabNavigator, StackNavigator } from "react-navigation";
+import { HomeScreen, FindingGirls } from "../pages";
 import Header from "../components/Header";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import SimpleLineIcons from "react-native-vector-icons/SimpleLineIcons";
 import { Colors } from "@theme";
 
+const HomeNav = StackNavigator(
+  {
+    FindHome: {
+      screen: HomeScreen,
+    },
+    FindGirlScreen: {
+      screen: FindingGirls,
+    },
+  },
+  {
+    initialRouteName: "FindHome",
+    navigationOptions: {
+      header: null,
+    },
+  },
+);
 const MainTabNavigator = TabNavigator(
   {
     FindTab: {
-      screen: HomeScreen,
+      screen: HomeNav,
       navigationOptions: {
         header: <Header />,
         tabBarLabel: "Find",
@@ -84,4 +100,5 @@ const MainTabNavigator = TabNavigator(
     lazy: false, //fix second tab rendering error
   },
 );
+
 export default MainTabNavigator;

@@ -5,6 +5,10 @@ import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import styles from "./HomeScreen.style";
 
 class HomeScreen extends React.Component {
+  next = () => {
+    this.props.navigation.navigate("FindGirlScreen");
+  };
+
   render() {
     return (
       <View style={GlobalStyle.fullPageContainer}>
@@ -20,7 +24,7 @@ class HomeScreen extends React.Component {
             I would love to show you the ladies in your area but.. You
             haven&apos;t switched on GPS yet.
           </Text>
-          <TouchableOpacity style={styles.switchBtn}>
+          <TouchableOpacity style={styles.switchBtn} onPress={this.next}>
             <Text style={styles.btnText}>Switch on GPS</Text>
           </TouchableOpacity>
         </View>
