@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "282261720704",
+    "firebase_url": "https://glambu-1.firebaseio.com",
+    "project_id": "glambu-1",
+    "storage_bucket": "glambu-1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282261720704:android:595f4def8934bbe0",
+        "android_client_info": {
+          "package_name": "com.glambu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "282261720704-ao19uhvf07ou67adtih68b9fcrp0rcin.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCddZOB2TfGQ9UfzSg9LTUF3y6qIe0cLSA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
