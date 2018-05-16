@@ -2,6 +2,7 @@ package com.glambu;
 
 import android.app.Application;
 
+import com.BV.LinearGradient.LinearGradientPackage;
 import com.facebook.react.ReactApplication;
 import io.invertase.firebase.RNFirebasePackage;
 import io.invertase.firebase.storage.RNFirebaseStoragePackage;
@@ -31,7 +32,8 @@ public class MainApplication extends Application implements ReactApplication {
             new RNFirebasePackage(),
             new VectorIconsPackage(),
             new FacebookLoginPackage(),
-            new RNFirebaseStoragePackage()
+            new RNFirebaseStoragePackage(),
+            new LinearGradientPackage()
       );
     }
 

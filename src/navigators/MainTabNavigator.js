@@ -17,7 +17,7 @@ const HomeNav = StackNavigator(
     },
   },
   {
-    initialRouteName: "FindHome",
+    initialRouteName: "FindGirlScreen",
     navigationOptions: {
       header: null,
     },

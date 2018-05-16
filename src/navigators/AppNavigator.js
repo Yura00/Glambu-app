@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { addNavigationHelpers, StackNavigator } from "react-navigation";
-import { Onboarding } from "../pages";
+import { Onboarding, MakeOffer } from "../pages";
 import { addListener } from "../utils/redux";
 import SignUpNavigator from "./SignUpNavigator";
 import MainTabNavigator from "./MainTabNavigator";
@@ -21,9 +21,12 @@ export const AppNavigator = StackNavigator(
     MainTab: {
       screen: MainTabNavigator,
     },
+    MakeOffer: {
+      screen: MakeOffer,
+    },
   },
   {
-    initialRouteName: "MainTab",
+    initialRouteName: "MakeOffer",
     navigationOptions: {
       gesturesEnabled: false,
     },
