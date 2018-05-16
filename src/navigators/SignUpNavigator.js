@@ -8,7 +8,7 @@ const SignUpNavigator = StackNavigator(
     BioScreen: { screen: BioScreen },
   },
   {
-    initialRouteName: "BioScreen",
+    initialRouteName: "NameScreen",
     navigationOptions: {
       header: null,
     },

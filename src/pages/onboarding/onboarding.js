@@ -1,5 +1,12 @@
 import React from "react";
-import { View, StatusBar, Image, Text, Dimensions } from "react-native";
+import {
+  View,
+  StatusBar,
+  Image,
+  Text,
+  Dimensions,
+  TouchableOpacity,
+} from "react-native";
 import { connect } from "react-redux";
 import Slick from "react-native-slick";
 import { setUserToken } from "../../actions/auth";
@@ -92,7 +99,13 @@ class Onboarding extends React.Component {
             privacy guaranteed.
           </Text>
           <View style={styles.signinBtn}>
-            <FBLogin
+            <TouchableOpacity
+              onPress={() =>
+                this.props.navigation.navigate("RegisterationFlow")
+              }>
+              <FBLoginView />
+            </TouchableOpacity>
+            {/*<FBLogin
               buttonView={<FBLoginView />}
               ref={fbLogin => {
                 this.fbLogin = fbLogin;
@@ -115,7 +128,7 @@ class Onboarding extends React.Component {
               onPermissionsMissing={function(e) {
                 console.log(e);
               }}
-            />
+            />*/}
           </View>
         </View>
       </View>
