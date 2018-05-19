@@ -40,7 +40,7 @@ const MemberPhoto = props => {
           "#00000000",
           "#0000001f",
         ]}
-        style={[styles.linearGradient]}
+        style={styles.linearGradient}
       />
     </View>
   );

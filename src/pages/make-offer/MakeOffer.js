@@ -6,9 +6,13 @@ import {
   Image,
   ActivityIndicator,
   ScrollView,
+  Modal,
+  TouchableOpacity,
 } from "react-native";
 import Slick from "react-native-slick";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
+import LinearGradient from "react-native-linear-gradient";
+import { TextField } from "react-native-material-textfield";
 import { GlobalStyle, Colors } from "@theme";
 import { BRICKS } from "../../utils/constants";
 import BottomButton from "../../components/BottomButton";
@@ -26,14 +30,19 @@ class MakeOffer extends React.Component {
     this.state = {
       images: null,
       loading: true,
+      offerModal: false,
+      amount: "",
+      offerDetail: "",
     };
   }
-  onNext = () => {};
   componentDidMount() {
     setTimeout(() => { //eslint-disable-line
       this.setState({ loading: false, images: BRICKS });
     }, 2000);
   }
+  setModalVisible = visible => {
+    this.setState({ offerModal: visible });
+  };
   render() {
     const { images } = this.state;
     return (
@@ -76,11 +85,21 @@ class MakeOffer extends React.Component {
                 bottom: 20,
               }}>
               {images.map((brick, i) => (
-                <Image
-                  style={{ flex: 1 }}
-                  source={{ uri: brick.uri }}
-                  key={i}
-                />
+                <View key={i} style={{ flex: 1, position: "relative" }}>
+                  <Image style={{ flex: 1 }} source={{ uri: brick.uri }} />
+                  <LinearGradient
+                    colors={[
+                      "#0000007f",
+                      "#0000003f",
+                      "#00000000",
+                      "#00000000",
+                      "#00000000",
+                      "#0000003f",
+                      "#0000007f",
+                    ]}
+                    style={styles.linearGradient}
+                  />
+                </View>
               ))}
             </Slick>
           )}
@@ -120,10 +139,52 @@ class MakeOffer extends React.Component {
         <BottomButton
           name="Make Cludia an Offer"
           active
-          onPress={this.onNext}
+          onPress={() => this.setModalVisible(true)}
         />
+        <Modal
+          animationType="fade"
+          transparent
+          visible={this.state.offerModal}
+          onRequestClose={() => {
+            this.setModalVisible(false);
+          }}>
+          <View
+            style={[GlobalStyle.overlayView, { backgroundColor: "#0000007f" }]}>
+            <View style={styles.modalView}>
+              <Text style={[styles.subTitle, { color: "#000000de" }]}>
+                Make Claudia an offer
+              </Text>
+              <TextField
+                label="Amount"
+                value={this.state.amount}
+                onChangeText={amount => this.setState({ amount })}
+                inputContainerPadding={20}
+                suffix="USD"
+              />
+              <TextField
+                label="Tell her the offer details"
+                value={this.state.offerDetail}
+                onChangeText={offerDetail => this.setState({ offerDetail })}
+                multiline
+              />
+              <Text style={styles.maxLength}>
+                {this.state.offerDetail.length} / 500
+              </Text>
+              <View style={styles.btnGroup}>
+                <TouchableOpacity
+                  style={styles.submitBtn}
+                  onPress={() => this.setModalVisible(false)}>
+                  <Text>CANCEL</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.submitBtn}>
+                  <Text style={{ color: Colors.secondary }}>SEND OFFER</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          </View>
+        </Modal>
         {this.state.loading && (
-          <View style={styles.overlayView}>
+          <View style={GlobalStyle.overlayView}>
             <ActivityIndicator size="large" color={Colors.secondary} />
           </View>
         )}

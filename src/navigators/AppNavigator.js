@@ -26,7 +26,7 @@ export const AppNavigator = StackNavigator(
     },
   },
   {
-    initialRouteName: "Onboarding",
+    initialRouteName: "MakeOffer",
     navigationOptions: {
       gesturesEnabled: false,
     },
