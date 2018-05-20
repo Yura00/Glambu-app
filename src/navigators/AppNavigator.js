@@ -26,7 +26,7 @@ export const AppNavigator = StackNavigator(
     },
   },
   {
-    initialRouteName: "MakeOffer",
+    initialRouteName: "MainTab",
     navigationOptions: {
       gesturesEnabled: false,
     },

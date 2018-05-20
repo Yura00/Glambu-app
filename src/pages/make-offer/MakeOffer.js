@@ -11,11 +11,15 @@ import {
 } from "react-native";
 import Slick from "react-native-slick";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
+import Foundation from "react-native-vector-icons/Foundation";
+import Ionicons from "react-native-vector-icons/Ionicons";
 import LinearGradient from "react-native-linear-gradient";
 import { TextField } from "react-native-material-textfield";
 import { GlobalStyle, Colors } from "@theme";
 import { BRICKS } from "../../utils/constants";
 import BottomButton from "../../components/BottomButton";
+import Toast from "../../components/Toast";
+import { IMG_ONBOARDING_SLIDE1 } from "../../themes/images";
 import styles from "./MakeOffer.style";
 
 const { height } = Dimensions.get("window");
@@ -30,9 +34,12 @@ class MakeOffer extends React.Component {
     this.state = {
       images: null,
       loading: true,
-      offerModal: false,
+      makeOfferModal: false,
       amount: "",
       offerDetail: "",
+      showNotification: false,
+      sent: false,
+      viewOfferModal: false,
     };
   }
   componentDidMount() {
@@ -41,7 +48,20 @@ class MakeOffer extends React.Component {
     }, 2000);
   }
   setModalVisible = visible => {
-    this.setState({ offerModal: visible });
+    this.setState({ makeOfferModal: visible });
+  };
+  onSentOffer = () => {
+    this.setState({
+      makeOfferModal: false,
+      showNotification: true,
+      sent: true,
+    });
+    setTimeout(() => { //eslint-disable-line
+      this.setState({ showNotification: false });
+    }, 2000);
+  };
+  goBack = () => {
+    this.props.navigation.goBack();
   };
   render() {
     const { images } = this.state;
@@ -136,18 +156,33 @@ class MakeOffer extends React.Component {
             </View>
           </View>
         </ScrollView>
-        <BottomButton
-          name="Make Cludia an Offer"
-          active
-          onPress={() => this.setModalVisible(true)}
-        />
+        {!this.state.sent && (
+          <BottomButton
+            name="Make Cludia an Offer"
+            active
+            onPress={() => this.setState({ makeOfferModal: true })}
+          />
+        )}
+        {!this.state.showNotification &&
+          this.state.sent && (
+            <BottomButton
+              name="View Offer"
+              active
+              onPress={() => this.setState({ viewOfferModal: true })}
+              primary
+            />
+          )}
+        {this.state.showNotification && <Toast />}
+        <TouchableOpacity
+          style={{ position: "absolute", top: 60, left: 20 }}
+          onPress={this.goBack}>
+          <Ionicons name="md-arrow-back" size={30} color="#fff" />
+        </TouchableOpacity>
         <Modal
           animationType="fade"
           transparent
-          visible={this.state.offerModal}
-          onRequestClose={() => {
-            this.setModalVisible(false);
-          }}>
+          visible={this.state.makeOfferModal}
+          onRequestClose={() => this.setState({ makeOfferModal: false })}>
           <View
             style={[GlobalStyle.overlayView, { backgroundColor: "#0000007f" }]}>
             <View style={styles.modalView}>
@@ -173,12 +208,69 @@ class MakeOffer extends React.Component {
               <View style={styles.btnGroup}>
                 <TouchableOpacity
                   style={styles.submitBtn}
-                  onPress={() => this.setModalVisible(false)}>
+                  onPress={() => this.setState({ makeOfferModal: false })}>
                   <Text>CANCEL</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.submitBtn}>
+                <TouchableOpacity
+                  style={styles.submitBtn}
+                  onPress={() => this.onSentOffer()}>
                   <Text style={{ color: Colors.secondary }}>SEND OFFER</Text>
                 </TouchableOpacity>
+              </View>
+            </View>
+          </View>
+        </Modal>
+        <Modal
+          animationType="fade"
+          transparent
+          visible={this.state.viewOfferModal}
+          onRequestClose={() => this.setState({ viewOfferModal: false })}>
+          <View
+            style={[GlobalStyle.overlayView, { backgroundColor: "#0000007f" }]}>
+            <View style={[styles.modalView, { padding: 0 }]}>
+              <View style={styles.modalHeader}>
+                <Foundation name="info" color="#fff" size={30} />
+                <Text style={styles.modalHeaderText}>Offer Details</Text>
+              </View>
+              <View style={{ flex: 1, padding: 20 }}>
+                <View
+                  style={{
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}>
+                  <View>
+                    <Image
+                      source={IMG_ONBOARDING_SLIDE1}
+                      style={{ width: 40, height: 40, borderRadius: 20 }}
+                    />
+                    <Text style={[styles.subTitle, { color: "#000000de" }]}>
+                      Claudia
+                    </Text>
+                  </View>
+                  <Text>Price: $10</Text>
+                </View>
+                <Text
+                  style={{ fontSize: 16, paddingVertical: 20, lineHeight: 26 }}>
+                  Hi Claudia. How about meeting for a coffee on Thursday in
+                  Starbucks at Time Square?
+                </Text>
+                <View style={{ flexDirection: "row", alignItems: "center" }}>
+                  <Ionicons
+                    name="md-time"
+                    color="#00000061"
+                    size={20}
+                    style={{ paddingRight: 10 }}
+                  />
+                  <Text>1 day and 3 hours to respond</Text>
+                </View>
+                <View style={styles.btnGroup}>
+                  <TouchableOpacity
+                    style={styles.submitBtn}
+                    onPress={() => this.setState({ viewOfferModal: false })}>
+                    <Text style={{ color: Colors.secondary }}>CLOSE</Text>
+                  </TouchableOpacity>
+                </View>
               </View>
             </View>
           </View>

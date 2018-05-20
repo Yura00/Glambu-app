@@ -1,5 +1,5 @@
 import { StyleSheet, Dimensions } from "react-native";
-import { Fonts } from "@theme";
+import { Fonts, Colors } from "@theme";
 const { width, height } = Dimensions.get("screen");
 
 export default StyleSheet.create({
@@ -43,5 +43,18 @@ export default StyleSheet.create({
   },
   submitBtn: {
     paddingLeft: 20,
+  },
+  modalHeader: {
+    height: 56,
+    backgroundColor: Colors.primary,
+    justifyContent: "flex-start",
+    alignItems: "center",
+    paddingHorizontal: 20,
+    flexDirection: "row",
+  },
+  modalHeaderText: {
+    fontSize: 20,
+    color: "#ffffff",
+    paddingLeft: 5,
   },
 });

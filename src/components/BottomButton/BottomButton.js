@@ -17,14 +17,21 @@ const styles = StyleSheet.create({
   inactive: {
     backgroundColor: Colors.btnInactive,
   },
+  primary: {
+    backgroundColor: Colors.primary,
+  },
   btnText: {
     fontSize: Fonts.size.h4,
     color: Colors.white,
   },
 });
-const BottomButton = ({ active, name, onPress }) => (
+const BottomButton = ({ active, name, onPress, primary }) => (
   <TouchableOpacity
-    style={[styles.button, active ? styles.active : styles.inactive]}
+    style={[
+      styles.button,
+      active ? styles.active : styles.inactive,
+      primary ? styles.primary : styles.active,
+    ]}
     onPress={onPress}
     disabled={!active}>
     <Text style={styles.btnText}>{name}</Text>
@@ -34,9 +41,11 @@ BottomButton.propTypes = {
   active: PropTypes.bool,
   name: PropTypes.string,
   onPress: PropTypes.func,
+  primary: PropTypes.bool,
 };
 BottomButton.defaultProps = {
   active: false,
+  primary: false,
   name: "Button Name",
   onPress: () => console.log("--touch pressed--"), //eslint-disable-line
 };

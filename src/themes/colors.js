@@ -1,5 +1,6 @@
 const Colors = {
   default: "#0f5fad",
+  primary: "#303039",
   secondary: "#d24857",
   navy: "#2b2f3b",
   turquoise: "#16a086",
