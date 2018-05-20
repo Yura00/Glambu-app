@@ -1,6 +1,6 @@
 import React from "react";
 import { TabNavigator, StackNavigator } from "react-navigation";
-import { HomeScreen, FindingGirls } from "../pages";
+import { HomeScreen, FindingGirls, OfferScreen } from "../pages";
 import Header from "../components/Header";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import Ionicons from "react-native-vector-icons/Ionicons";
@@ -36,7 +36,7 @@ const MainTabNavigator = TabNavigator(
       },
     },
     OfferTab: {
-      screen: HomeScreen,
+      screen: OfferScreen,
       navigationOptions: {
         header: <Header />,
         tabBarLabel: "Offer",
@@ -57,7 +57,7 @@ const MainTabNavigator = TabNavigator(
     },
   },
   {
-    initialRouteName: "FindTab",
+    initialRouteName: "OfferTab",
     tabBarPosition: "bottom",
     headerStyle: {
       shadowColor: "#0f0",

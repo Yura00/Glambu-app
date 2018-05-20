@@ -7,6 +7,7 @@ const IMG_ONBOARDING_SLIDE5 = require("../assets/images/img-onboarding-slide5.pn
 
 const IC_COMMENTS = require("../assets/images/ic-comments.png");
 const IC_LOGO_TEXT = require("../assets/images/ic-logo-text.png");
+const IC_EMPTY = require("../assets/images/ic-empty.png");
 export default {
   BG_GRAD_ONBOARDING,
   IMG_ONBOARDING_SLIDE1,
@@ -16,4 +17,5 @@ export default {
   IMG_ONBOARDING_SLIDE5,
   IC_COMMENTS,
   IC_LOGO_TEXT,
+  IC_EMPTY,
 };

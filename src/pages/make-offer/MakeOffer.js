@@ -15,11 +15,10 @@ import Foundation from "react-native-vector-icons/Foundation";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import LinearGradient from "react-native-linear-gradient";
 import { TextField } from "react-native-material-textfield";
-import { GlobalStyle, Colors } from "@theme";
+import { GlobalStyle, Colors, Images } from "@theme";
 import { BRICKS } from "../../utils/constants";
 import BottomButton from "../../components/BottomButton";
 import Toast from "../../components/Toast";
-import { IMG_ONBOARDING_SLIDE1 } from "../../themes/images";
 import styles from "./MakeOffer.style";
 
 const { height } = Dimensions.get("window");
@@ -241,7 +240,7 @@ class MakeOffer extends React.Component {
                   }}>
                   <View>
                     <Image
-                      source={IMG_ONBOARDING_SLIDE1}
+                      source={Images.IMG_ONBOARDING_SLIDE1}
                       style={{ width: 40, height: 40, borderRadius: 20 }}
                     />
                     <Text style={[styles.subTitle, { color: "#000000de" }]}>
