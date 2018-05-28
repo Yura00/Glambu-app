@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import Feather from "react-native-vector-icons/Feather";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import Ionicons from "react-native-vector-icons/Ionicons";
@@ -37,27 +37,32 @@ const OfferCard = props => {
                 borderTopColor: "#0000001f",
                 borderTopWidth: 1,
               }}>
-              <View
+              <TouchableOpacity
                 style={{
                   flexDirection: "row",
                   alignItems: "center",
                   marginRight: 20,
-                }}>
+                }}
+                onPress={() => props.onCall('phone', '+1 415-486-4800')}
+              >
                 <MaterialCommunityIcons
                   name="cellphone-android"
                   size={24}
                   color={Colors.secondary}
                 />
                 <Text style={styles.acceptText}>PHONE</Text>
-              </View>
-              <View style={{ flexDirection: "row", alignItems: "center" }}>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={{ flexDirection: "row", alignItems: "center" }}
+                onPress={() => props.onCall('whatsapp')}
+              >
                 <FontAwesome
                   name="whatsapp"
                   size={24}
                   color={Colors.secondary}
                 />
                 <Text style={styles.acceptText}>WHATSAPP</Text>
-              </View>
+              </TouchableOpacity>
             </View>
           </Fragment>
         )}

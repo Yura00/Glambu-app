@@ -1,4 +1,6 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
+import { Colors } from "@theme";
+const { width } = Dimensions.get("window");
 
 export default StyleSheet.create({
   emptyOfferDescription: {
@@ -10,4 +12,15 @@ export default StyleSheet.create({
     height: 50,
     marginVertical: 20,
   },
+  actionsheet: {
+    position: 'absolute',
+    bottom: 0,
+    width: width,
+    backgroundColor: Colors.bkColor,
+  },
+  actionBtn: {
+    flexDirection: 'row',
+    padding: 15,
+    alignItems: 'center',
+  }
 });
