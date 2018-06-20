@@ -1,4 +1,5 @@
 const BG_GRAD_ONBOARDING = require("../assets/images/bg-grad-onboarding.png");
+const BG_ACCEPTED_MODAL = require("../assets/images/bg-accepted-modal.png");
 const IMG_ONBOARDING_SLIDE1 = require("../assets/images/img-onboarding-slide1.png");
 const IMG_ONBOARDING_SLIDE2 = require("../assets/images/img-onboarding-slide2.png");
 const IMG_ONBOARDING_SLIDE3 = require("../assets/images/img-onboarding-slide3.png");
@@ -18,4 +19,5 @@ export default {
   IC_COMMENTS,
   IC_LOGO_TEXT,
   IC_EMPTY,
+  BG_ACCEPTED_MODAL,
 };
